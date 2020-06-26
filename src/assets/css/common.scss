@@ -1,0 +1,377 @@
+@charset "UTF-8";
+@import "./variable.scss";
+.button {
+  display: inline-block;
+  min-width: 80px;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 30px;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  color: #fff;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  vertical-align: middle;
+  cursor:pointer;
+
+  &:disabled {
+    color: $disableTextColor !important;
+    background-color: $disableColor !important;
+    border-color: $disableColor !important;
+  }
+  &.small {
+    height: 28px;
+    line-height: 26px;
+  }
+  &.large {
+    height: 42px;
+    line-height: 40px;
+  }
+}
+
+.button-red-solid {
+  color: #fff;
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+
+  &:hover,
+  &:focus {
+    background-color: $lightPrimaryColor;
+    border-color: $lightPrimaryColor;
+  }
+  &:active {
+    background-color: $deepPrimaryColor;
+    border-color: $deepPrimaryColor;
+  }
+}
+
+.button-red-hollow {
+  color: $primaryColor;
+  background-color: #fff;
+  border-color: $borderColor;
+
+  &:hover,
+  &:focus {
+    border-color: $primaryColor;
+  }
+  &:active {
+    color: #fff;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+  }
+}
+
+.button-black-hollow {
+  color: $primaryTextColor;
+  background-color: #fff;
+  border-color: $borderColor;
+
+  &:hover,
+  &:focus {
+    border-color: $primaryColor;
+  }
+  &:active {
+    color: $primaryColor;
+    border-color: $primaryColor;
+  }
+}
+
+.button-disabled {
+  color: $disableTextColor !important;
+  background-color: $disableColor !important;
+  border-color: $disableColor !important;
+}
+
+.button-radius {
+  border-radius: 100px;
+}
+
+.button-icon {
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+button {
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    color: $primaryColor;
+  }
+  &:active {
+    a {
+      color: #fff;
+    }
+  }
+}
+.page-container{
+  position: relative;
+	width:1440px;
+	margin:0 auto;
+  @media(max-width: 1500px) {
+    width: 1200px;
+  }
+  @media(max-width: 1200px) {
+    width:$contentWidth;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
+	.page-left{
+    width:240px;
+	}
+	.page-right{
+    overflow:auto;
+    margin-left: 240px;
+  }
+  .container-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width:240px;
+    min-height: calc(100vh - 52px);
+    background-color: #fff;
+  }
+}
+.el-dialog{
+  border-radius:4px;
+}
+
+// ------ pagination ------
+.pagination-wrapper{
+  text-align: center;
+  padding: 30px;
+  .el-pager{
+    li{
+      padding: 0 4px;
+      min-width: 30px;
+      border: 1px solid $borderColor;
+      height: 30px;
+      line-height: 28px;
+      margin-left: 5px;
+      margin-right: 5px;
+      &:hover{
+        color: $primaryColor;
+      }
+      &.active{
+        color: $primaryColor;
+        border-color: transparent;
+      }
+      &.active+li{
+        border: 1px solid $borderColor;
+      }
+    }
+  }
+  .btn-prev{
+    &:hover{
+      color: $primaryColor;
+    }
+  }
+  .btn-next{
+    &:hover{
+      color: $primaryColor;
+    }
+  }
+}
+
+.res-icon-0{
+  color: #eace62;
+}
+.res-icon-1{
+  color: #eec756;
+}
+.res-icon-2{
+  color: #859dd5;
+}
+.res-icon-3{
+  color: #539fff;
+  &.icon-doc{
+    color: #539fff;
+  }
+  &.icon-ppt{
+    color: #f36666;
+  }
+  &.icon-pdf{
+    color: #f36666;
+  }
+  &.icon-xls{
+    color: #7dccac;
+  }
+  &.icon-txt{
+    color: #ae9ae2;
+  }
+}
+.res-icon-4{
+  color: #d1479c;
+}
+.res-icon-5{
+  color: #d1479c;
+}
+.res-icon-6{
+  color: #72cfff;
+}
+.res-icon-7{
+  color: #7e60a0;
+}
+.res-icon-8{
+  color: #c97942;
+}
+.res-icon-9{
+  color: #c97942;
+}
+.res-icon-10{
+  color: #857af5;
+}
+.res-icon-11{
+  color: #c97942;
+}
+
+.res-iconbg-0{
+  background-color: #eace62;
+}
+.res-iconbg-1{
+  background-color: #eec756;
+}
+.res-iconbg-2{
+  background-color: #859dd5;
+}
+.res-iconbg-3{
+  background-color: #539fff;
+  &.icon-doc{
+    background-color: #539fff;
+  }
+  &.icon-ppt{
+    background-color: #f36666;
+  }
+  &.icon-pdf{
+    background-color: #f36666;
+  }
+  &.icon-xls{
+    background-color: #7dccac;
+  }
+  &.icon-txt{
+    background-color: #ae9ae2;
+  }
+}
+.res-iconbg-4{
+  background-color: #d1479c;
+}
+.res-iconbg-5{
+  background-color: #d1479c;
+}
+.res-iconbg-6{
+  background-color: #72cfff;
+}
+.res-iconbg-7{
+  background-color: #7e60a0;
+}
+.res-iconbg-8{
+  background-color: #c97942;
+}
+.res-iconbg-9{
+  background-color: #c97942;
+}
+.res-iconbg-10{
+  background-color: #857af5;
+}
+.res-iconbg-11{
+  background-color: #c97942;
+}
+
+.custom-operation-modal {
+  .el-dialog {
+    width: 90%;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+  }
+  .el-dialog__header {
+    height: 42px;
+    padding: 0 24px;
+    border: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
+    // background: url("../images/popup_top_bg.png") $primaryColor no-repeat center center;
+    background-size: 100% 100%;
+  }
+  .el-dialog__title {
+    font-size: 16px;
+    line-height: 42px;
+    color: #fff;
+  }
+  .el-dialog__headerbtn {
+    top: 0;
+    right: 15px;
+    line-height: 42px;
+    font-size: 26px;
+    .el-dialog__close{
+      color: #fff;
+    }
+
+    &:hover {
+      opacity: 1;
+      color: #fff;
+      .el-dialog__close{
+        color: #fff;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .el-dialog__body {
+    padding: 24px;
+    min-height: calc(70vh - 100px);
+  }
+  .el-dialog__footer {
+    height: 60px;
+    padding: 14px 24px;
+    text-align: center;
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: $inputBackgroundColor;
+  }
+  .btn-confirm {
+    margin-right: 44px;
+    min-width: 80px;
+    height: 30px;
+    padding: 0 10px;
+    line-height: 28px;
+    border-radius: 2px;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    font-weight: normal;
+    &:hover,
+    &:focus {
+      background-color: $lightPrimaryColor;
+      border-color: $lightPrimaryColor;
+    }
+    &:active {
+      background-color: $deepPrimaryColor;
+      border-color: $deepPrimaryColor;
+    }
+  }
+  .btn-cancel{
+    min-width: 80px;
+    height: 30px;
+    padding: 0 10px;
+    line-height: 28px;
+    border-radius: 2px;
+    font-weight: normal;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #fff;
+      color: $primaryColor;
+      border-color: $primaryColor;
+    }
+  }
+}
