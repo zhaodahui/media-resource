@@ -1,4 +1,4 @@
-# media-resource2
+# media-resource
 
 > A Vue.js project
 
