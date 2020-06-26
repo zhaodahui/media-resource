@@ -1,0 +1,29 @@
+{
+    "error": "OK",
+    "value": [
+        {
+            "media_type_id": "1",
+            "name": "示范公开课类别",
+            "note": "修改过的类型",
+            "media_count": "1"
+        },
+        {
+            "media_type_id": "2",
+            "name": "教育培训类",
+            "note": "test",
+            "media_count": "3"
+        },
+        {
+            "media_type_id": "3",
+            "name": "铃声",
+            "note": "test",
+            "media_count": "5"
+        },
+        {
+            "media_type_id": "4",
+            "name": "通知",
+            "note": "test",
+            "media_count": "3"
+        }
+    ]
+}
