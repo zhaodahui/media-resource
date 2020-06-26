@@ -36,9 +36,6 @@ export default {
       showPreview: false
     }
   },
-  created() {
-      console.log(this.model)
-  },
   methods: {
   }
 }

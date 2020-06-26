@@ -46,7 +46,6 @@ function Resource(params){
 	this.media_type_name = params.media_type_name;
 }
 
-// 获取资源详情
 Resource.prototype.retrieveResourceList = function(params){
 	return request({
         url: `${util.API_SERVER_HOST}/static/mock/resourceList.json`,
@@ -54,89 +53,5 @@ Resource.prototype.retrieveResourceList = function(params){
         params: params
       })
 }
-
-// Resource.prototype.save = function(creator, successCallback,errorCallback){
-// 	var url = Config.API_SERVER_HOST + '/resources';
-// 	if (this.id) {
-// 		url+='/' + this.id
-// 	}
-// 	if (creator) {
-// 		url+='?creator=' + creator
-// 	}
-// 	var data = {
-// 		name:this.name,
-// 		description:this.description,
-// 		allowDownload:this.allowDownload,
-// 		duration:this.duration,
-// 		filePath:this.filePath,
-// 		fileSize:this.fileSize,
-// 		libraryId:this.libraryId,
-// 		parentId:this.parentId,
-// 		mimeType:this.mimeType,
-// 		parentId:this.parentId,
-// 		thumbnail:this.thumbnail,
-// 		type:this.type,
-// 		catalog1:this.catalog1,
-// 		catalog2:this.catalog2,
-// 		catalog3:this.catalog3,
-// 		catalog4:this.catalog4,
-// 		catalog5:this.catalog5,
-// 		labelList:this.labelList,
-// 		published:this.published
-// 	}
-// 	// return console.log(data)
-// 	Vue.http({
-// 		method:this.id?'PUT':'POST',
-// 		url:url,
-// 		body:data,
-// 	})
-// 	// Vue.http.post(url,data)
-// 	.then(function(res){
-// 		successCallback && successCallback(res.data);
-// 	}, function(){
-// 		errorCallback && errorCallback();
-// 	})
-// }
-
-
-// Resource.prototype.remove = function(successCallback,errorCallback){
-// 	var url = Config.API_SERVER_HOST + '/resources/' + this.id;
-// 	Vue.http.delete(url).then(function(res){
-// 		successCallback && successCallback(res.data);
-// 	}, function(){
-// 		errorCallback && errorCallback();
-// 	})
-// }
-
-// Resource.prototype.batchUpdate = function(successCallback,errorCallback){
-// 	var url = Config.API_SERVER_HOST + '/resources/batch';
-// 	var data = {
-// 		allowDownload:this.allowDownload,
-// 		catalog1:this.catalog1,
-// 		catalog2:this.catalog2,
-// 		catalog3:this.catalog3,
-// 		catalog4:this.catalog4,
-// 		catalog5:this.catalog5,
-// 		labelList:this.labelList,
-// 		parentId:this.parentId,
-// 		resourceIds:this.batchIdList
-// 	}
-// 	Vue.http.put(url,data).then(function(res){
-// 		successCallback && successCallback(res.data);
-// 	}, function(){
-// 		errorCallback && errorCallback();
-// 	})
-// }
-
-// // 资源下载记录
-// Resource.prototype.downloadRecord = function(callback){
-// 	var url = Config.API_SERVER_HOST + '/resources/downloadrecord/' + this.id;
-// 	Vue.http.get(url).then(function(){
-// 		callback && callback();
-// 	}, function(){
-// 		callback && callback();
-// 	})
-// }
-
 
 export default Resource

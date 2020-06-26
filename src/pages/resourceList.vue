@@ -238,7 +238,6 @@ export default {
     },
     changeCatItem (catId) {
       let self = this
-      console.log(catId)
       self.curCatId = catId
       self.getResList()
     },
@@ -309,7 +308,6 @@ export default {
     },
     chooseCat (command) {
       let self = this
-      console.log(command)
       self.resCatObj = command
     }
   },
