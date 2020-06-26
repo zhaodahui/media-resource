@@ -2,7 +2,7 @@ const util = {}
 let API_SERVER_HOST = ''
 let RES_HOST = ''
 
-if(window.href.indexOf("github") != -1){
+if(window.location.href.indexOf("github") != -1){
     API_SERVER_HOST = '/media-resource/dist/'
     RES_HOST = '/media-resource/dist/'
 }
