@@ -125,6 +125,7 @@ import Category from '@/assets/js/model/category.js'
 import Resource from '@/assets/js/model/resource.js'
 import File from '@/assets/js/config/file.js'
 import resItem from '@/components/resItem.vue'
+import util from "@/libs/util.js";
 
 export default {
   name: 'ResourceList',
@@ -247,6 +248,9 @@ export default {
       self.resObj.retrieveResourceList().then(function(res){
         for(let i = 0; i < res.value.length; i++){
           var resItem = new Resource(res.value[i])
+          if(resItem.url && resItem.url.indexOf("http") == -1){
+            resItem.url = util.RES_HOST + resItem.url
+          }
           if(self.curCatId == -1 || resItem.media_type_ids == self.curCatId){
             self.resList.push(resItem)
           }

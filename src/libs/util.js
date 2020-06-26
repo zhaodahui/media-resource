@@ -8,5 +8,6 @@ if(window.location.href.indexOf("github") != -1){
 }
 
 util.API_SERVER_HOST = API_SERVER_HOST;
+util.RES_HOST = RES_HOST;
 
 export default util
