@@ -24,6 +24,12 @@ export default {
         }
     }
   },
+  created() {
+    let self = this
+    if(self.model && self.model.url && self.model.url.indexOf("http") == -1){
+      self.model.url = RES_HOST + self.model.url
+    }
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
