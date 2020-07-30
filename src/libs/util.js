@@ -1,9 +1,8 @@
 const util = {}
-let API_SERVER_HOST = ''
+let API_SERVER_HOST = 'http://121.36.86.253'
 let RES_HOST = ''
 
 if(window.location.href.indexOf("github") != -1){
-    API_SERVER_HOST = '/media-resource/dist/'
     RES_HOST = '/media-resource/dist/'
 }
 

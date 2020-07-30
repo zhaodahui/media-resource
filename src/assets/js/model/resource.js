@@ -48,7 +48,8 @@ function Resource(params){
 
 Resource.prototype.retrieveResourceList = function(params){
 	return request({
-        url: `${util.API_SERVER_HOST}/static/mock/resourceList.json`,
+		url: `${util.RES_HOST}/static/mock/resourceList.json`,
+		// url: `${util.API_SERVER_HOST}/bmd/jsonApi.php?dist_id=1&school_id=1& _test=1&api=getMediaInfoList`,
         method: 'get',
         params: params
       })

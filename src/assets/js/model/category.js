@@ -13,7 +13,8 @@ function Category(params){
 
 Category.prototype.retrieveCategoryList = function(params){
 	return request({
-        url: `${util.API_SERVER_HOST}/static/mock/categoryList.json`,
+        url: `${util.RES_HOST}/static/mock/categoryList.json`,
+        // url: `${util.API_SERVER_HOST}/bmd/jsonApi.php?dist_id=1&school_id=1& _test=1&api=getMediaTypeList`,
         method: 'get',
         params: params
       })

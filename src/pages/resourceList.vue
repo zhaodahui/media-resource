@@ -35,8 +35,9 @@
           <el-button type="primary" size="medium" @click="openEditRes()">添加资源</el-button>
           <el-pagination
             class="select-pagesize"
+            @size-change="handleSizeChange"
             :page-sizes="[10, 20, 30]"
-            :page-size="10"
+            :page-size="resListPs"
             layout="sizes"
             :total="resListTotal">
           </el-pagination>
@@ -67,12 +68,11 @@
         
         <div class="pagination-wrapper" v-show="resListTotal && resList.length">
           <el-pagination
-            @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
             :current-page.sync="resListPn"
-            :page-size="100"
+            :page-size="resListPs"
             layout="prev, pager, next, jumper"
-            :total="1000">
+            :total="resListTotal">
           </el-pagination>
         </div>
       </el-main>
@@ -142,9 +142,9 @@ export default {
       resObj: new Resource(),
       catList: [],
       resList: [],
-      resListTotal: 67,
-      resListPn: 0,
-      resListPs: 0,
+      resListTotal: 0,
+      resListPn: 1,
+      resListPs: 10,
       curCatId: -1,
       curRes: {},
       uploadDialogVisible: false,
@@ -244,14 +244,24 @@ export default {
     getResList () {
       let self = this
       self.resList = []
-      self.resObj.retrieveResourceList().then(function(res){
-        for(let i = 0; i < res.value.length; i++){
-          var resItem = new Resource(res.value[i])
-          if(resItem.url && resItem.url.indexOf("http") == -1){
-            resItem.url = util.RES_HOST + resItem.url
-          }
-          if(self.curCatId == -1 || resItem.media_type_ids == self.curCatId){
-            self.resList.push(resItem)
+      let p = {
+        page: self.resListPn,
+        limit: self.resListPs,
+      }
+      if(self.curCatId > 0){
+        p.media_type_ids = self.curCatId
+      }
+      self.resObj.retrieveResourceList(p).then(function(res){
+        if(res.value){
+          self.resListTotal = Number(res.value.total)
+          for(let i = 0; res.value.list && i < res.value.list.length; i++){
+            var resItem = new Resource(res.value.list[i])
+            if(resItem.url && resItem.url.indexOf("http") == -1){
+              resItem.url = util.RES_HOST + resItem.url
+            }
+            if(self.curCatId == -1 || resItem.media_type_ids == self.curCatId){
+              self.resList.push(resItem)
+            }
           }
         }
       }).catch(function(ex){
